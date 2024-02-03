@@ -6,11 +6,16 @@
 1. Anita Francis Archibong - 27729790 👩🏽‍💻
    
 2. Ihekweazu Samuel - 40265794 👩🏽‍🚀
-Ugochukwu Kizito Ugwu - 40244315 👨🏽‍💻
-Tweneboah Kodua kofi anyimadu - 40227652 👨🏽‍✈️
-Valentine obi Ozonyia - 40202470 
-Okoye Elvis Emeka -  40274904
-Josephine Famiyeh - 40262544
+
+3. Ugochukwu Kizito Ugwu - 40244315 👨🏽‍💻
+
+4.Tweneboah Kodua kofi anyimadu - 40227652 👨🏽‍✈️
+
+5.Valentine obi Ozonyia - 40202470 🤵🏾‍♂️
+
+6. Okoye Elvis Emeka -  40274904🧑🏾‍🚒
+
+7. Josephine Famiyeh - 40262544👩🏽
 
 
 **Project Description**
