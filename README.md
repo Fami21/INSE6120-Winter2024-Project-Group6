@@ -1,5 +1,5 @@
 # INSE6120-Winter2024-Project-Group6
-**Mobile network protocols, from 2G to 5G. Evolution and lessons learned.#***
+**Mobile network protocols, from 2G to 5G. Evolution and lessons learned.***
 
 
 **Group Members**
@@ -11,7 +11,7 @@
 
 4.Tweneboah Kodua kofi anyimadu - 40227652 👨🏽‍✈️
 
-5.Valentine obi Ozonyia - 40202470 🤵🏾‍♂️
+5. Valentine obi Ozonyia - 40202470 🤵🏾‍♂️
 
 6. Okoye Elvis Emeka -  40274904🧑🏾‍🚒
 
