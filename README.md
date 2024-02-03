@@ -1,5 +1,5 @@
 # INSE6120-Winter2024-Project-Group6
-**Mobile network protocols, from 2G to 5G. Evolution and lessons learned.***
+**Mobile network protocols, from 2G to 5G. Evolution and lessons learned.**
 
 
 **Group Members**
