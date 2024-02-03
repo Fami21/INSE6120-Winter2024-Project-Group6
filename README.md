@@ -7,9 +7,9 @@
    
 2. Ihekweazu Samuel - 40265794 👩🏽‍🚀
 
-3. Ugochukwu Kizito Ugwu - 40244315 👨🏽‍💻
-
-4.Tweneboah Kodua kofi anyimadu - 40227652 👨🏽‍✈️
+3. Ugochukwu Kizito Ugwu - 40244315 👨
+   
+4. Tweneboah Kodua kofi anyimadu - 40227652 👨🏽‍✈️
 
 5. Valentine obi Ozonyia - 40202470 🤵🏾‍♂️
 
