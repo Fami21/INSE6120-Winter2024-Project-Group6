@@ -104,18 +104,206 @@ Building from source can be done by using the instructions for jSS7, which can b
 
 
 
+Running on Kali
+
+If you're looking to set up an SS7 attack simulator based on RestComm's jSS7 stack on Kali Linux, you're delving into a more specialized and technical aspect of network security and simulation. RestComm's jSS7 is an open-source Java-based implementation of SS7 stack components, providing a robust framework for developing SS7 applications and services. This can be used for educational, testing, and development purposes to simulate SS7 network scenarios, including potential vulnerabilities and attacks within a controlled environment.
+
+Here's a general outline of steps you might follow to set up an SS7 attack simulator using RestComm's jSS7 on Kali Linux. Remember, these activities should only be conducted within a legal and ethical framework, such as a lab setup for security research or educational purposes, with all necessary permissions obtained.
+
+### Preparing the Environment
+
+1. **Install Java Development Kit (JDK)**: jSS7 requires Java, so ensure you have the JDK installed on your Kali Linux. You can install it via apt-get or another package manager.
+   
+   ```bash
+   sudo apt update
+   sudo apt install default-jdk
+   ```
+
+2. **Verify Java Installation**: Ensure Java is correctly installed by checking the version.
+   
+   ```bash
+   java -version
+   ```
+
+3. **Download RestComm jSS7**: Clone the jSS7 repository from GitHub to get the latest version of the stack.
+   
+   ```bash
+   git clone https://github.com/RestComm/jss7.git
+   ```
+
+### Setting Up jSS7
+
+4. **Navigate to the jSS7 Directory**: Change into the cloned repository's directory.
+   
+   ```bash
+   cd jss7
+   ```
+
+5. **Build jSS7**: Use Maven to build jSS7. If you don't have Maven installed, you will need to install it first.
+   
+   ```bash
+   sudo apt install maven
+   mvn clean install
+   ```
+
+   This process may take some time as it compiles the source code and builds the necessary components.
+
+### Configuring the SS7 Simulator
+
+6. **Configuration**: You'll need to configure the stack for simulation. This involves setting up the SS7 layer configurations, such as Point Codes, Network Indicators, Service Indicators, and routing configurations. These settings are found in the configuration files within the jSS7 stack. You may need to refer to the jSS7 documentation for detailed configuration instructions.
+
+7. **Running the Simulator**: With everything set up and configured, you can start the SS7 simulator. This typically involves running a Java application that uses the jSS7 stack. You might need to create or modify a Java class that initiates the stack and starts the simulation, based on your specific testing or development requirements.
+
+### Legal and Ethical Considerations
+
+- Consent and Permission: Make sure that you have all necessary permissions and are compliant with laws and ethical guidelines when setting up and using an SS7 simulator.
+
+- Security and Privacy: Be mindful of the potential impact on privacy and security. The knowledge gained should be used to enhance security measures and protect against vulnerabilities.
+
+### Advanced Usage
+
+As you become more familiar with the jSS7 stack and SS7 network simulations, you may explore more advanced scenarios, including developing custom SS7 applications, testing network defenses against SS7 vulnerabilities, or contributing to the jSS7 project with improvements or bug fixes.
+
+Remember, the goal of such a setup should be to further understanding of SS7 security, develop protective measures, and contribute to the security community's knowledge.
+
+### Configuring the SS7 Simulator ###
+Configuring the SS7 layer for simulation with tools like SigPloit involves setting parameters that define how your simulation interacts with the SS7 network components. This configuration is crucial for accurately simulating the behavior of SS7 messages and protocols. While SigPloit provides an environment to exploit vulnerabilities within the SS7 network for educational and testing purposes, configuring the underlying SS7 stack (like RestComm's jSS7) requires an understanding of SS7 network architecture and parameters.
+
+### Basic Concepts for SS7 Configuration:
+
+- Point Codes (PCs): Unique addresses within the SS7 network used to identify network elements.
+- Network Indicators (NIs): Indicate the type of network (e.g., national, international) the message is intended for.
+- Service Indicators (SIs): Define the type of service or part of the SS7 network a message should be routed to (e.g., ISUP for call setup, SCCP for more complex routing).
+- Routing Configurations: Define how messages are routed between different components in the SS7 network.
+
+### Steps to Configure SS7 Layer in jSS7 for Simulation:
+
+1. Download and Setup jSS7:
+   Ensure you have jSS7 and its dependencies set up as discussed earlier. This might involve cloning the jSS7 repository and building it with Maven.
+
+2. Identify Configuration Files:
+   jSS7 configuration files are usually XML or property files located in the project's `resources` or a specific configuration directory. Look for files named similarly to `ss7-config.xml`, `m3ua-config.xml`, or `sctp-config.xml`.
+
+3. **Edit Configuration Files**:
+   Open the configuration files in a text editor to set up your simulation parameters. Here's what you might need to configure:
+	Point Codes of the local and remote nodes.
+	Network Indicators to specify the type of SS7 network.
+	Service Indicators for routing to the correct SS7 service.
+	DPC (Destination Point Code), OPC (Originating Point Code), and SSN (Sub-System Number) values for message routing.
+
+4. **Configure SCTP** (Stream Control Transmission Protocol):
+   - SCTP is used as a transport layer for SS7 over IP (SIGTRAN). Configure local and remote IP addresses and ports for SCTP associations.
+
+5. **Configure M3UA** (MTP3 User Adaptation Layer):
+   - M3UA enables SS7 MTP3 layer services over IP networks. Configure the ASP (Application Server Process) and AS (Application Server) settings, including the routing context and traffic mode type.
+
+6. **Configure Higher Layers**:
+   Depending on your simulation needs, configure higher layers like SCCP, TCAP, MAP, or ISUP with appropriate service indicators, addressing, and service configurations.
+
+7. **Testing and Validation**:
+   After configuring, test your setup using provided test scripts or by running your own simulations. Ensure messages are correctly routed and received as expected.
+
+### Using SigPloit for SS7 Simulation:
+
+If you're using SigPloit in conjunction with jSS7 for simulation, SigPloit will likely interface with the jSS7 stack you've configured. Ensure SigPloit points to the correct configuration files and that any specific SigPloit configurations align with your jSS7 setup.
+
+- **SigPloit Configuration**: Review SigPloit's documentation or configuration files for specifics on how it interfaces with SS7 stacks and any additional settings required for simulation.
+
+### Important Notes:
+
+- **Legal and Ethical Considerations**: Always ensure your testing is legal, ethical, and authorized. Unauthorized use of SS7 capabilities can be illegal and harmful.
+- **Documentation**: Refer to the jSS7 and SigPloit documentation for the most accurate and detailed configuration instructions.
+
+This overview gives you a starting point for configuring the SS7 layer for simulation. Given the complexity of SS7 and variations in setups, you may need to adjust configurations based on your specific requirements and the documentation of the tools you're using.
+
+Problem 
+   
+The error messages you're seeing indicate that the Java compiler version specified for the project is no longer supported. Specifically, the errors:
+
+```
+[ERROR] Source option 5 is no longer supported. Use 7 or later.
+[ERROR] Target option 5 is no longer supported. Use 7 or later.
+```
+
+mean that the project is configured to use Java 5 (also known as 1.5), but the version of the Java Development Kit (JDK) you are using does not support compiling to Java 5. Modern versions of JDK require at least Java 7 or later for the source and target versions.
+
+To resolve this issue, you need to update the Maven `pom.xml` file(s) of the jSS7 project to specify a newer Java version for both source and target compilation. Here's how you can do it:
+
+1. **Locate the `pom.xml` File(s):** You'll need to find the `pom.xml` file for the `scheduler` module that is failing, as well as any parent `pom.xml` files that might specify the Java version for the project.
+
+2. **Edit the `pom.xml` File(s):** Open the `pom.xml` file(s) in a text editor. Look for the `<properties>` section where the Java version is specified, typically with `maven.compiler.source` and `maven.compiler.target` properties.
+
+3. **Update Java Version:** Change the values of `maven.compiler.source` and `maven.compiler.target` to a supported version, such as 7 or higher. For example, to set the project to use Java 8, you would make the following changes:
+
+   ```xml
+   <properties>
+       ...
+       <maven.compiler.source>1.8</maven.compiler.source>
+       <maven.compiler.target>1.8</maven.compiler.target>
+       ...
+   </properties>
+   ```
+
+4. **Save the Changes:** After updating the `pom.xml` file(s), save your changes.
+
+5. **Re-run Maven Build:** Go back to the terminal and re-run the Maven build command. If you were in the middle of a build process, you can resume it with the command provided by Maven in the error output, or simply start a new build:
+
+   ```bash
+   mvn clean install
+   ```
+
+This should resolve the compilation errors related to the unsupported Java version. If you encounter further issues, it may be necessary to adjust other parts of the project configuration or resolve additional dependencies compatible with the newer Java version you've selected.
+
+
+Sloved
+
+Based on the content of the `pom.xml` file you've provided, the configuration specifies Java 1.5 for both the source and target versions in the `maven-compiler-plugin` section. Given the error messages you encountered, you'll need to update these versions to at least Java 7, although Java 8 or newer is recommended if compatible with the rest of your project and dependencies.
+
+Here's how you can update the `pom.xml` to use Java 8, which is widely supported and provides a good balance of modern features and compatibility:
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source> <!-- Updated from 1.5 to 1.8 -->
+                <target>1.8</target> <!-- Updated from 1.5 to 1.8 -->
+            </configuration>
+        </plugin>
+        ...
+    </plugins>
+    ...
+</build>
+```
+
+Make sure to replace the `<source>1.5</source>` and `<target>1.5</target>` lines with the updated version as shown above. After making these changes, save the `pom.xml` file.
+
+Next, you should attempt to rebuild the project. Navigate to your project's root directory in the terminal (ensure you're at the root where the `pom.xml` file is located or specify the path to it) and run:
+
+```bash
+mvn clean install
+```
+
+This command cleans any compiled files you have (ensuring a fresh start), then compiles your project and runs any tests. If everything is configured correctly, this should resolve the compilation errors related to the unsupported source and target Java versions.
+
+If you encounter any more errors during the build, they may be related to other aspects of your project's configuration or dependencies that also need to be updated for compatibility with Java 8. Keep an eye on the Maven output for any such issues and address them accordingly. 
+
+ 
+ 
 
 
 
 
 Using it in Linux.
-
-
+Now we set up have finished sigploit 
 
 
 
 GSMEvil2
 What are the types of SS7 attacks?
+
 SS7 attacks can be roughly divided into four categories.
 1.	Tracking
 2.	Interception
@@ -182,6 +370,17 @@ chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.gta.ufrj.br/ftp/
 
 
 
+Wire Shark 
+•	Wireshark with SS7 Plugins
+Overview: Wireshark is a well-known network protocol analyzer that can be extended with plugins to support SS7.
+Capabilities: While not an emulation tool per se, Wireshark can be invaluable for analyzing SS7 traffic and understanding how SS7 messages are structured and flow across a network.
+Use Case: Ideal for monitoring and analyzing SS7 traffic in a test environment.
+
+OpenSS7
+SS7MAPer
+
+
 List of Contributors
 •	Tweneboah Kodua Kofi Anyimadu.
 •	Kizito
+![image](https://github.com/Fami21/INSE6120-Winter2024-Project-Group6/assets/33865697/71146552-5e57-4c8b-8aa7-653d3ed13026)
